@@ -1,5 +1,7 @@
 import React, { lazy } from "react";
 import { Routes, Route } from "react-router";
+import HomeChatLayout from "../layout/HomeChatLayout";
+import ChatHomePage from "../pages/ChatHomePage";
 // import Home from "../pages/HomePage";
 // import About from "../pages/AboutPage";
 // import Contact from "../pages/ContactPage";
@@ -18,11 +20,15 @@ const AppRoute = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/chat" element={<HomeChatLayout />}>
+        <Route index element={<ChatHomePage />} />
+        <Route path=":chatId" element={<Chat />} />
+      </Route>
+      <Route path="group" element={<Group />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/chat" element={<Chat />} />
-      <Route path="/group" element={<Group />} />
       <Route path="/register" element={<Register />} />
       {/* Add more routes as needed */}
+      <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>
   );
 };

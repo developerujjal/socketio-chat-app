@@ -3,9 +3,20 @@ import ChatComponent from "../components/ChatComponent/ChatComponent";
 import { useParams } from "react-router";
 import { chats } from "../components/Sample/Sample";
 import ChatList from "../components/ChatList/ChatList";
+import ChatProfileSidebar from "../components/ChatProfileSidebar/ChatProfileSidebar";
 
 const ChatPage = () => {
   const { id } = useParams();
+
+  const user = {
+    name: "Adelaide Mainz",
+    status: "Online",
+    title: "Creative Director",
+    location: "Strait Solutions",
+    about:
+      "Digital design enthusiast with a passion for creating meaningful user experiences.",
+    email: "adelaide@straitsolutions.com",
+  };
 
   const handleDeleteChat = (e, id, groupChat) => {
     e.preventDefault();
@@ -33,9 +44,8 @@ const ChatPage = () => {
       </div>
 
       {/* Profile Section */}
-      <div className="col-span-3 p-4 bg-gray-100 overflow-y-auto">
-        <h2 className="text-lg font-semibold mb-2">User Profile</h2>
-        <p>Details go here...</p>
+      <div className="col-span-3 p-1 bg-gray-100 overflow-y-auto">
+        <ChatProfileSidebar user={user} date={"2024-11-04T18:00:00.000Z"} />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const HomeChatLayout = () => {
     <>
       <Header />
       {/* Main layout with grid */}
-      <div className=" h-screen">
+      <div className="h-[calc(100vh-52px)]">
         <Outlet />
       </div>
     </>

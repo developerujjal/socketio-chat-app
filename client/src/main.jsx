@@ -6,8 +6,10 @@ import AppRoute from "./routes/AppRoute";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <AppRoute />
-    </BrowserRouter>
+    <div onContextMenu={(e) => e.preventDefault()}>
+      <BrowserRouter>
+        <AppRoute />
+      </BrowserRouter>
+    </div>
   </StrictMode>
 );
